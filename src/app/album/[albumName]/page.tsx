@@ -3,17 +3,6 @@ import cloudinary from "cloudinary";
 import { Searchresult } from '@/app/gallery/page';
 import Uploadimg from '@/components/upload-img';
 
-// export async function generateStaticParams(){
-//   const result= await cloudinary.v2.search.expression (`resource_type:image`) 
-//   .sort_by("created_at","desc")
-//   .with_field("tags")
-//   .max_results(3)
-//   .execute() as {resources:Searchresult[]}
-
-//   return result.resources.map((image)=>( //in this whole function mena simply puri API ko fetch kia or usme sa jis property ka A/C hum params ley rahay thay wo yaha dynamic route ko dedi now at build time generateStatic will automatically populate dynamic route with params.
-//     {albumName : image.folder}
-//   ))
-// }
 
 const DynamicAlbum = async ({params}:{params:{albumName:string}}) => {
     const result= await cloudinary.v2.search.expression (`resource_type:image AND folder=${params.albumName}`) //here we are filtering it through "folders".
