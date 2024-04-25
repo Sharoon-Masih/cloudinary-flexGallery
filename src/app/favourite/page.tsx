@@ -4,6 +4,7 @@ import { Searchresult } from '../gallery/page';
 import React from 'react'
 import List from '@/components/fav-list';
 
+export const dynamic="force-dynamic"
 const page = async () => {
   const response = await cloudinary.v2.search
     .expression('resource_type:image AND tags=favourite')

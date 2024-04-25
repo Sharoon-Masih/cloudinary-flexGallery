@@ -9,6 +9,7 @@ export type Searchresult = {
   folder: string
 }
 
+export const dynamic="force-dynamic";
 const Gallery = async () => {
   //remember must setup your environment variable where cloud name and API key and API secret should be available.
   const results = await cloudinary.v2.search
