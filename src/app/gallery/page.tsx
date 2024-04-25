@@ -2,6 +2,7 @@ import Upload from "@/components/upload-btn";
 import Uploadimg from "@/components/upload-img";
 import cloudinary from "cloudinary";
 import SearchBar from "@/components/searchBar";
+import { revalidatePath } from 'next/cache'
 
 export type Searchresult = {
   public_id: string;
@@ -9,7 +10,9 @@ export type Searchresult = {
   folder: string
 }
 
+revalidatePath("/gallery","page")
 export const dynamic="force-dynamic";
+
 const Gallery = async () => {
   //remember must setup your environment variable where cloud name and API key and API secret should be available.
   const results = await cloudinary.v2.search
