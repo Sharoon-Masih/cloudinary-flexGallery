@@ -2,7 +2,7 @@ import Upload from "@/components/upload-btn";
 import Uploadimg from "@/components/upload-img";
 import cloudinary from "cloudinary";
 import SearchBar from "@/components/searchBar";
-import { revalidatePath } from 'next/cache'
+// import { revalidatePath } from 'next/cache'
 
 export type Searchresult = {
   public_id: string;
@@ -10,7 +10,7 @@ export type Searchresult = {
   folder: string
 }
 
-revalidatePath("/gallery","page")
+// revalidatePath("/gallery","page")
 export const dynamic="force-dynamic";
 
 const Gallery = async () => {
