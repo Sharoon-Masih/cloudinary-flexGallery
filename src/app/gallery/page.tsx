@@ -12,10 +12,10 @@ export type Searchresult = {
 }
 
 // revalidatePath("/gallery","page")
-// export const dynamic="force-dynamic";
+export const dynamic="force-dynamic";
 
 const Gallery = async () => {
-  noStore()
+  // noStore() 
   //remember must setup your environment variable where cloud name and API key and API secret should be available.
   const results = await cloudinary.v2.search
     .expression('resource_type:image') //this method is for filtering
