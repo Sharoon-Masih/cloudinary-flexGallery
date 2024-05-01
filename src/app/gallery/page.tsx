@@ -2,6 +2,7 @@ import Upload from "@/components/upload-btn";
 import Uploadimg from "@/components/upload-img";
 import cloudinary from "cloudinary";
 import SearchBar from "@/components/searchBar";
+import { unstable_noStore as noStore } from "next/cache";
 // import { revalidatePath } from 'next/cache'
 
 export type Searchresult = {
@@ -11,9 +12,10 @@ export type Searchresult = {
 }
 
 // revalidatePath("/gallery","page")
-export const dynamic="force-dynamic";
+// export const dynamic="force-dynamic";
 
 const Gallery = async () => {
+  noStore()
   //remember must setup your environment variable where cloud name and API key and API secret should be available.
   const results = await cloudinary.v2.search
     .expression('resource_type:image') //this method is for filtering
