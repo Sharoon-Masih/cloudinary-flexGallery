@@ -3,7 +3,7 @@ import Uploadimg from "@/components/upload-img";
 import cloudinary from "cloudinary";
 import SearchBar from "@/components/searchBar";
 import { unstable_noStore as noStore } from "next/cache";
-// import { revalidatePath } from 'next/cache'
+import { revalidatePath } from 'next/cache'
 
 export type Searchresult = {
   public_id: string;
@@ -11,8 +11,8 @@ export type Searchresult = {
   folder: string
 }
 
-// revalidatePath("/gallery","page")
-export const dynamic="force-dynamic";
+revalidatePath("/gallery","page")
+// export const dynamic="force-dynamic";
 
 const Gallery = async () => {
   // noStore() 
