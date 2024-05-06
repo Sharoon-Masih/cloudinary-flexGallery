@@ -12,7 +12,7 @@ export type Searchresult = {
 }
 
 revalidatePath("/gallery","page")
-// export const dynamic="force-dynamic";
+export const dynamic="force-dynamic";
 
 const Gallery = async () => {
   // noStore() 
