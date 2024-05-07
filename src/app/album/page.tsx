@@ -1,7 +1,8 @@
 import React from 'react';
 import Albumcard from '@/components/albumcard';
 
-export const dynamic="force-dynamic"
+export const revalidate=5; //this is known as segment level-config for revalidation.
+
 const Album = async () => {
   
   return (

@@ -13,7 +13,7 @@ export type Searchresult = {
 
 // revalidatePath("/gallery","page")
 // export const dynamic="force-dynamic";
-export const revalidate=5;
+export const revalidate=5; //this is known as segment level-config for revalidation.
 
 
 const Gallery = async () => {
