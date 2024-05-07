@@ -11,8 +11,10 @@ export type Searchresult = {
   folder: string
 }
 
-revalidatePath("/gallery","page")
-export const dynamic="force-dynamic";
+// revalidatePath("/gallery","page")
+// export const dynamic="force-dynamic";
+export const revalidate=5;
+
 
 const Gallery = async () => {
   // noStore() 
