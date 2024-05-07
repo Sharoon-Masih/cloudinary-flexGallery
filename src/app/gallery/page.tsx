@@ -11,9 +11,9 @@ export type Searchresult = {
   folder: string
 }
 
-revalidatePath("/gallery")
+// revalidatePath("/gallery")
 // export const dynamic="force-dynamic";
-// export const revalidate=5; //this is known as segment level-config for revalidation.
+export const revalidate=5; //this is known as segment level-config for revalidation.
 
 
 const Gallery = async () => {
